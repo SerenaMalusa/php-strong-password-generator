@@ -21,9 +21,9 @@ function create_password ($password_length) {
         // get a random number between 0 and the lenght of the character string
         $index = rand(0,strlen($characters));
         // get the character with that index 
-        $random_character = $characters[$index];
+        $random_character = substr($characters, $index, 1);
         // concatenate the characters
-        $new_password = $new_password . $random_character;
+        $new_password .= $random_character;
     };
     
     return $new_password;
@@ -36,11 +36,10 @@ $user_password_length = $_GET['password-length'] ?? '';
 // if the form has been sent 
 if (!empty($_GET)) {
 
-    var_dump (create_password(12));
-
+    // create the password of the length chosen by the user
+    $user_password = create_password($user_password_length);
 
 }  
-
 
 ?>
 
@@ -79,6 +78,12 @@ if (!empty($_GET)) {
             </div>
 
         </form>
+
+        <?php if(!empty($_GET)) { ?>
+            <div class="card p-3 mt-5">
+                <h6>Yor new password is: <?php echo $user_password ?></h6>
+            </div>
+        <?php } ?>
     </div>
 
     

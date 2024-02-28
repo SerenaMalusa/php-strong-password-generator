@@ -30,7 +30,7 @@ if (!empty($_GET)) {
         // save the new password in the session
         $_SESSION['new_password'] = $user_password;
     
-        // exit;
+        exit;
 
     }    
 

@@ -1,45 +1,7 @@
 <?php
 
-
-/**
- * function that generate a string of random character, of the give lenght
- * 
- * @param int $password_length - the lenght of the string to generate
- * @return string $new_password - the new generated string
- */
-function create_password ($password_length) {
-    
-    $letters = 'abcdefghijklmnopqrstuvwxyz';
-    $capital_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $numbers = '0123456789';
-    $symbols = '!#$%&\()*+,-./:;<=>?@[\]^_{|}~';
-    $characters = $letters . $capital_letters . $numbers . $symbols;
-    
-    $new_password = '';
-    
-    for ($i=0; $i < $password_length; $i++) {
-        // get a random number between 0 and the lenght of the character string
-        $index = rand(0,strlen($characters));
-        // get the character with that index 
-        $random_character = substr($characters, $index, 1);
-        // concatenate the characters
-        $new_password .= $random_character;
-    };
-    
-    return $new_password;
-    
-};
-
-// $user_password_length = isset($_GET['password-length']) ? (int) $_GET['password-length'] : '';
-$user_password_length = $_GET['password-length'] ?? '';
-
-// if the form has been sent 
-if (!empty($_GET)) {
-
-    // create the password of the length chosen by the user
-    $user_password = create_password($user_password_length);
-
-}  
+require_once __DIR__ . "/partials/init.php";
+require_once __DIR__ . "/partials/functions.php";
 
 ?>
 
@@ -69,7 +31,7 @@ if (!empty($_GET)) {
 
     <div class="container">
 
-        <h1>Strong password generator</h1>
+        <h1 class="mt-5">Strong password generator</h1>
         <form class="card mt-5 p-3" method="GET">
 
             <div class="input-group">
@@ -81,7 +43,8 @@ if (!empty($_GET)) {
 
         <?php if(!empty($_GET)) { ?>
             <div class="card p-3 mt-5">
-                <h6>Yor new password is: <?php echo $user_password ?></h6>
+                <h6>Yor new password is: <br>
+                <?php echo $user_password ?></h6>
             </div>
         <?php } ?>
     </div>

@@ -31,7 +31,7 @@ require_once __DIR__ . "/partials/functions.php";
     <div class="container">
 
         <h1 class="mt-5">Strong password generator</h1>
-        <form class="mt-5 p-3" method="GET">
+        <form class="card mt-5 p-3" method="GET">
 
             <div class="row">
                 
@@ -45,7 +45,7 @@ require_once __DIR__ . "/partials/functions.php";
                 </div>
                 <div class="col-auto">
         
-                    <button class="btn btn-primary">Button</button>
+                    <button class="btn btn-primary">Generate password</button>
         
                 </div>            
 

@@ -34,7 +34,7 @@ session_start();
 
         <h1 class="mt-5">Strong password generator</h1>
 
-            <div class="p-3 mt-5">
+            <div class="card p-3 mt-5">
                 <h6>Your new password is: <br>
                 <?php echo $_SESSION['new_password'] ?></h6>
             </div>

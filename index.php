@@ -5,7 +5,6 @@ require_once __DIR__ . "/partials/functions.php";
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +31,24 @@ require_once __DIR__ . "/partials/functions.php";
     <div class="container">
 
         <h1 class="mt-5">Strong password generator</h1>
-        <form class="card mt-5 p-3" method="GET">
+        <form class="mt-5 p-3" method="GET">
 
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="write here the lenght of the password" name="password-length">
-                <button class="btn btn-outline-primary">Button</button>
+            <div class="row">
+                
+                <div class="col-10">
+        
+                    <input autofocus type="text" class="form-control <?= $invalid_class ?>" placeholder="write here the lenght of the password" name="password-length">
+                    <div class="invalid-feedback col-6">
+                        <?= $invalid_feeback ?>
+                    </div>
+        
+                </div>
+                <div class="col-auto">
+        
+                    <button class="btn btn-primary">Button</button>
+        
+                </div>            
+
             </div>
 
         </form>

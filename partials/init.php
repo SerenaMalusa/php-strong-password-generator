@@ -15,7 +15,6 @@ if (!empty($_GET)) {
 
         // set the form to communicate the error
         $invalid_class = 'is-invalid';
-        $invalid_feeback = 'Please enter a number';
 
     // else if the password length is a number
     } else {

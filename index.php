@@ -41,12 +41,12 @@ require_once __DIR__ . "/partials/functions.php";
 
         </form>
 
-        <?php if(!empty($_GET)) { ?>
+        <!-- <?php if(!empty($_GET)) { ?>
             <div class="card p-3 mt-5">
                 <h6>Yor new password is: <br>
                 <?php echo $user_password ?></h6>
             </div>
-        <?php } ?>
+        <?php } ?> -->
     </div>
 
     

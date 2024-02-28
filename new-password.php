@@ -1,3 +1,12 @@
+<?php 
+
+// start the session
+session_start();
+
+// var_dump($_SESSION['new_password']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -21,7 +30,16 @@
 </head>
 <body>
 
-    <h1>Ciao ciao</h1>
-    
+<div class="container">
+
+        <h1 class="mt-5">Strong password generator</h1>
+
+            <div class="card p-3 mt-5">
+                <h6>Your new password is: <br>
+                <?php echo $_SESSION['new_password'] ?></h6>
+            </div>
+
+    </div>
+
 </body>
 </html>

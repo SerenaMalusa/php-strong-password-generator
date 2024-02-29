@@ -18,7 +18,7 @@ function create_password ($password_length) {
     
     for ($i=0; $i < $password_length; $i++) {
         // get a random number between 0 and the lenght of the character string
-        $index = rand(0,strlen($characters));
+        $index = rand(0, strlen($characters) - 1);
         // get the character with that index 
         $random_character = substr($characters, $index, 1);
         // concatenate the characters
